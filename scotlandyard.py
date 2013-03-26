@@ -68,3 +68,9 @@ def trace(startnode, ticket_list):
         nodes = hop(nodes, ticket_list.popleft())
     return sorted(nodes)
 
+if __name__ == '__main__':
+    import sys
+    startnode = int(sys.argv[1])
+    ticket_list = sys.argv[2:]
+    print('Possible positions for Mr. X:')
+    print(', '.join(map(str, trace(startnode, ticket_list))))
